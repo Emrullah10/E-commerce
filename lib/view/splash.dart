@@ -1,21 +1,22 @@
 import 'package:ecommerce/constant/constant.dart';
 import 'package:ecommerce/generated/assets.dart';
-import 'package:ecommerce/view/home.dart';
+import 'package:ecommerce/view/base_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:grock/grock.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends ConsumerStatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  ConsumerState<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {
-      Grock.toRemove(HomePage());
+      Grock.toRemove(BaseScaffold());
     });
     super.initState();
   }

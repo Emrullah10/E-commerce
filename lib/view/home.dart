@@ -1,5 +1,4 @@
 import 'package:ecommerce/companents/catEgory_text.dart';
-import 'package:ecommerce/companents/custom_appBar.dart';
 import 'package:ecommerce/companents/home_slider_widget.dart';
 import 'package:ecommerce/companents/product_card.dart';
 import 'package:ecommerce/models/home_product.model.dart';
@@ -26,17 +25,16 @@ class _HomePageState extends ConsumerState<HomePage> {
     var read = ref.read(homeRiverpod);
 
     return Scaffold(
-        appBar: CustomAppBar(),
         body: ListView(
-          children: [
-            HomeCampaigns(
-              read: read,
-              watch: watch,
-            ),
-            homeProducts(read.hotDeals),
-            homeProducts(read.mostPopular),
-          ],
-        ));
+      children: [
+        HomeCampaigns(
+          read: read,
+          watch: watch,
+        ),
+        homeProducts(read.hotDeals),
+        homeProducts(read.mostPopular),
+      ],
+    ));
   }
 
   Column homeProducts(HomeProductsModel model) {
